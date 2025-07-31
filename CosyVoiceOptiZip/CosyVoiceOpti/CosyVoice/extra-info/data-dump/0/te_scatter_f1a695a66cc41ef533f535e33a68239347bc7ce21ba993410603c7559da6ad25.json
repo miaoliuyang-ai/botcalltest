@@ -1,0 +1,21 @@
+{
+    "binFileName":"te_scatter_f1a695a66cc41ef533f535e33a68239347bc7ce21ba993410603c7559da6ad25",
+    "binFileSuffix":".o",
+    "blockDim":1,
+    "coreType":"VectorCore",
+    "deterministic":"ignore",
+    "intercoreSync":0,
+    "kernelName":"te_scatter_f1a695a66cc41ef533f535e33a68239347bc7ce21ba993410603c7559da6ad25__kernel0",
+    "magic":"RT_DEV_BINARY_MAGIC_ELF_AIVEC",
+    "memoryStamping":[
+        -1
+    ],
+    "opParaSize":176,
+    "parameters":[
+        null,
+        null,
+        null,
+        null
+    ],
+    "sha256":"15ffe494e8747790ba273c61c4fb09f3e438afbe0663eaea229143e114872cc8"
+}

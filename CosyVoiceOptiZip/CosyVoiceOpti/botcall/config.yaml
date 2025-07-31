@@ -1,0 +1,30 @@
+# config.yaml
+server:
+  host: "0.0.0.0"
+  port: 8000
+
+asr:
+  model_path: "/mnt/sfs_turbo/models/asr/paraformer-zh-online"
+  model_revision: "v2.0.4"
+  device: "npu:0"
+  chunk_size: [0, 10, 5]
+  encoder_chunk_look_back: 4
+  decoder_chunk_look_back: 1
+  sample_rate: 16000
+
+tts:
+  model_path: "/mnt/sfs_turbo/models/tts/CosyVoice2-0.5B"
+  voice_template_file: "voice_4.pt"
+  warmup_text: "预热文本"
+  warm_up_times: 1
+  default_voice: "温柔女"
+
+llm:
+  api_url: "https://dashscope.aliyuncs.com/compatible-mode/v1" #"http://169.254.30.2:8000/v1"
+  model_name: "qwen-plus" #"Qwen3-14B"
+  api_key: "sk-4c8ef8c0f65548f0bb426346cec680c8"             # 任意字符串（vLLM默认不验证）
+  system_prompt: "你是一个专注于汽车领域的人工客服"
+
+
+
+# api_url: "http://169.254.30.2:8000/v1"
