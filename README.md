@@ -163,3 +163,38 @@ completion = client.chat.completions.create(
 }},
 )
 print(completion.choices[0].message.content)
+
+
+
+{
+  "model": "meta-llama/Llama-3.1-8B-Instruct",
+  "messages": [
+    {"role": "system", "content": "You are a helpful expert math tutor."},
+    {"role": "user", "content": "Solve 8x + 31 = 2."}
+  ],
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "name": "MathResponse",
+      "schema": {
+        "type": "object",
+        "properties": {
+          "steps": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "explanation": {"type": "string"},
+                "output": {"type": "string"}
+              },
+              "required": ["explanation", "output"]
+            }
+          },
+          "final_answer": {"type": "string"}
+        },
+        "required": ["steps", "final_answer"]
+      }
+    }
+  },
+  "guided_decoding_backend": "outlines"
+}
