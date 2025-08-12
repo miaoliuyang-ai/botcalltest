@@ -148,6 +148,18 @@ completion = client.chat.completions.create(
             "content": "Generate a JSON with the brand, model and car_type of the most iconic car from the 90's",
         }
     ],
-    extra_body={"guided_json": json_schema},
+    extra_body={"guided_json": {
+  "title": "CarDescription",
+  "type": "object",
+  "properties": {
+    "brand": { "type": "string" },
+    "model": { "type": "string" },
+    "car_type": {
+      "type": "string",
+      "enum": ["sedan", "SUV", "Truck", "Coupe"]
+    }
+  },
+  "required": ["brand", "model", "car_type"]
+}},
 )
 print(completion.choices[0].message.content)
