@@ -57,3 +57,7 @@ python3 -m vllm.entrypoints.openai.api_server --model /data/model/Qwen2.5-3B-Ins
     "ignore_eos": false,
     "stream": false
 }'
+
+
+
+https://www.doubao.com/chat/15829941301331714
