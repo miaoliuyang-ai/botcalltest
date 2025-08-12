@@ -79,3 +79,18 @@ POST /v1/chat/completions
 
 https://www.doubao.com/thread/w0b67552341565421
 
+
+
+curl http://localhost:8000/v1/completions \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "qwen2.5-0.5b-instruct",
+    "prompt": "生成一个人的信息JSON",
+    "max_tokens": 100,
+    "temperature": 0,
+    "grammar": {
+      "type": "json_schema",
+      "value": "{\"type\":\"object\",\"properties\":{\"name\":{\"type\":\"string\"},\"age\":{\"type\":\"integer\"}}}"
+    }
+  }'
+
