@@ -114,3 +114,40 @@ completion = client.chat.completions.create(
     extra_body={"guided_choice": ["positive", "negative"]},
 )
 print(completion.choices[0].message.content)
+
+
+from pydantic import BaseModel
+from enum import Enum
+
+
+class CarType(str, Enum):
+    sedan = "sedan"
+    suv = "SUV"
+    truck = "Truck"
+    coupe = "Coupe"
+
+
+
+
+class CarDescription(BaseModel):
+    brand: str
+    model: str
+    car_type: CarType
+
+
+
+
+json_schema = CarDescription.model_json_schema()
+
+
+completion = client.chat.completions.create(
+    model="Qwen/Qwen2.5-3B-Instruct",
+    messages=[
+        {
+            "role": "user",
+            "content": "Generate a JSON with the brand, model and car_type of the most iconic car from the 90's",
+        }
+    ],
+    extra_body={"guided_json": json_schema},
+)
+print(completion.choices[0].message.content)
