@@ -94,3 +94,6 @@ curl http://localhost:8000/v1/completions \
     }
   }'
 
+
+  https://help.aliyun.com/zh/model-studio/json-mode#3a11734087e4d
+
