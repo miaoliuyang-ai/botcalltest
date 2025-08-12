@@ -38,3 +38,22 @@ python -m vllm.entrypoints.openai.api_server --model /data/model/Qwen2.5-3B-Inst
 --gpu-memory-utilization=0.9 \
 --trust-remote-code \
 --enforce-eager \
+
+
+ curl -X POST http://127.0.0.1:9000/v1/chat/completions \
+-H "Content-Type: application/json" \
+-d '{
+    "model": "/data/model/Qwen2.5-3B-Instruct",
+    "messages": [
+        {
+            "role": "user",
+            "content": "请介绍一下你自己"
+        }
+    ],
+    "max_tokens": 100,
+    "top_k": -1,
+    "top_p": 1,
+    "temperature": 0,
+    "ignore_eos": false,
+    "stream": false
+}'
