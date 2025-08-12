@@ -25,9 +25,9 @@ docker run -u root -itd --privileged=true \
 afb81789b460 \
 /bin/bash
 
+export ASCEND_RT_VISIBLE_DEVICES=4,5
 
-
-python -m vllm.entrypoints.openai.api_server --model /data/model/Qwen2.5-3B-Instruct \
+python3 -m vllm.entrypoints.openai.api_server --model /data/model/Qwen2.5-3B-Instruct \
 --max-num-seqs=256 \
 --max-model-len=14096 \
 --max-num-batched-tokens=14096 \
