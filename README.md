@@ -58,5 +58,24 @@ python3 -m vllm.entrypoints.openai.api_server --model /data/model/Qwen2.5-3B-Ins
     "stream": false
 }'
 
+
+POST /v1/chat/completions
+{
+  "model": "your-model",
+  "messages": [{"role": "user", "content": "请给出用户信息 JSON"}],
+  "response_format": {
+    "type": "json_schema",
+    "json_schema": {
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "age":  {"type": "integer"}
+      },
+      "required": ["name", "age"]
+    }
+  },
+  "guided_decoding_backend": "xgrammar"
+}
+
 https://www.doubao.com/thread/w0b67552341565421
 
