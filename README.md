@@ -97,3 +97,20 @@ curl http://localhost:8000/v1/completions \
 
   https://help.aliyun.com/zh/model-studio/json-mode#3a11734087e4d
 
+
+
+from openai import OpenAI
+client = OpenAI(
+    base_url="http://localhost:8000/v1",
+    api_key="-",
+)
+
+
+completion = client.chat.completions.create(
+    model="Qwen/Qwen2.5-3B-Instruct",
+    messages=[
+        {"role": "user", "content": "Classify this sentiment: vLLM is wonderful!"}
+    ],
+    extra_body={"guided_choice": ["positive", "negative"]},
+)
+print(completion.choices[0].message.content)
