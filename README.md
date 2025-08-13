@@ -238,3 +238,82 @@ url: http://192.168.1.174:19001/v1/chat/completions
     "stream": false
 }
 
+{
+    "model": "/data/model/Qwen/Qwen2.5/Qwen2.5-3B-Instruct",
+    "messages": [
+        {
+            "role": "system",
+            "content": "你是一个数学高手."
+        },
+        {
+            "role": "user",
+            "content": "请解决 8x + 2 = 26."
+        }
+    ],
+    "response_format": {
+        "type": "json_schema",
+        "json_schema": {
+            "name": "MathResponse",
+            "schema": {
+                "type": "object",
+                "properties": {
+                    "steps": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "explanation": {
+                                    "type": "string"
+                                },
+                                "output": {
+                                    "type": "string"
+                                }
+                            },
+                            "required": [
+                                "explanation",
+                                "output"
+                            ]
+                        }
+                    },
+                    "final_answer": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "steps",
+                    "final_answer"
+                ]
+            }
+        }
+    },
+    "guided_decoding_backend": "outlines"
+}
+
+{
+    "id": "chatcmpl-a3796c80c321445783345146e556e86b",
+    "object": "chat.completion",
+    "created": 1755003146,
+    "model": "/data/model/Qwen/Qwen2.5/Qwen2.5-3B-Instruct",
+    "choices": [
+        {
+            "index": 0,
+            "message": {
+                "role": "assistant",
+                "reasoning_content": null,
+                "content": "{ \"steps\": [ { \"explanation\": \"首先，我们要解这个一元一次方程：8x + 2 = 26\", \"output\": \"8x + 2 = 26\" }, { \"explanation\": \"我们需要把含有未知数的项和常数项分别放在方程的两边。所以我们可以先从两边减去2.\", \"output\": \"8x + 2 - 2 = 26 - 2\" }, { \"explanation\": \"这样可以简化为：8x = 24\", \"output\": \"8x = 24\" }, { \"explanation\": \"接下来，我们需要找到x的值。为此，我们用两边都除以8.\", \"output\": \"8x / 8 = 24 / 8\" }, { \"explanation\": \"这将给出x的值：x = 3\", \"output\": \"x = 3\" } ], \"final_answer\": \"x = 3\"}",
+                "tool_calls": []
+            },
+            "logprobs": null,
+            "finish_reason": "stop",
+            "stop_reason": null
+        }
+    ],
+    "usage": {
+        "prompt_tokens": 31,
+        "total_tokens": 249,
+        "completion_tokens": 218,
+        "prompt_tokens_details": null
+    },
+    "prompt_logprobs": null
+}
+
