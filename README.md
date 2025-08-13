@@ -218,4 +218,22 @@ print(completion.choices[0].message.content)
   },
   "guided_decoding_backend": "outlines"  // 可选，增强 JSON 格式准确性
 }
-    
+
+
+url: http://192.168.1.174:19001/v1/chat/completions
+入参：
+{
+    "model": "/data/model/Qwen/Qwen2.5/Qwen2.5-3B-Instruct",
+    "messages": [
+        {
+            "role": "user",
+            "content": "请介绍一下你自己"
+        }
+    ],
+    "max_tokens": 100,
+    "top_k": -1,
+    "top_p": 1,
+    "temperature": 0,
+    "ignore_eos": false,
+    "stream": false
+}
