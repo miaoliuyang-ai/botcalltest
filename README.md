@@ -198,3 +198,24 @@ print(completion.choices[0].message.content)
   },
   "guided_decoding_backend": "outlines"
 }
+
+
+
+{
+  "model": "meta-llama/Llama-3.1-8B-Instruct",  // 模型名称
+  "messages": [
+    {
+      "role": "system",
+      "content": "你是一个数学解题助手，必须返回 JSON 格式结果，包含以下字段：\n- steps：数组，每个元素是包含 explanation（步骤说明）和 output（步骤结果）的对象\n- final_answer：字符串，最终答案"
+    },
+    {
+      "role": "user",
+      "content": "Solve 2x + 5 = 15"
+    }
+  ],
+  "response_format": {
+    "type": "json_object"  // 指定输出为 JSON 对象
+  },
+  "guided_decoding_backend": "outlines"  // 可选，增强 JSON 格式准确性
+}
+    
