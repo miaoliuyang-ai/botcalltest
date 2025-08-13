@@ -317,3 +317,31 @@ url: http://192.168.1.174:19001/v1/chat/completions
     "prompt_logprobs": null
 }
 
+
+{
+	"model" : "/data/model/Qwen2.5-3B-Instruct",
+	"prompt" : "给出十个人的信息",
+	"max_tokens" : 100,
+	"top_k" : -1,
+	"top_p" : 1,
+	"temperature" : 0,
+	"ignore_eos" : false,
+	"stream" : false,
+	"guided_decoding_backend" : "outlines",
+	"guided_json" : {
+		"type" : "array",
+		"items" : {
+			"type" : "object",
+			"properties" : {
+				"name" : {
+					"type" : "string"
+				},
+				"age" : {
+					"type" : "integer"
+				}
+			},
+			"required" : ["name", "age"]
+		}
+	}
+}
+
