@@ -237,14 +237,4 @@ url: http://192.168.1.174:19001/v1/chat/completions
     "ignore_eos": false,
     "stream": false
 }
-{"model":"/data/model/Qwen/Qwen2.5/Qwen2.5-3B-Instruct", "messages": [{"role": "user", "content": "给出十个人的信息"}], "max_tokens": 100,"top_k": -1, "tc
-    "type": "array",
-    "items": {
-        "type": "object",
-        "properties": {
-            "name": {"type": "string"},
-            "age": {"type": "integer"}
-        },
-        "required": ["name", "age"]
-    }
-}
+
