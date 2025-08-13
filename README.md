@@ -345,3 +345,6 @@ url: http://192.168.1.174:19001/v1/chat/completions
 	}
 }
 
+
+https://blog.csdn.net/liuzhenghua66/article/details/144892986
+
