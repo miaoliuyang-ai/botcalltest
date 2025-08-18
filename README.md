@@ -1,4 +1,5 @@
 docker login -u cn-southwest-2@HST3WU1ZLQ6979GWGOQ5 -p 49f9a1afe6a0b10590dcc8ff2d46f1373830bc50928b69ae318ad45ca290d06d swr.cn-southwest-2.myhuaweicloud.com
+
 sudo docker pull swr.cn-southwest-2.myhuaweicloud.com/miaoliuyang/hwbotcall:1.0
 
 
