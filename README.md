@@ -1,5 +1,39 @@
 https://modelscope.cn/models/iic/speech_dfsmn_ans_psm_48k_causal/summary?spm=a2c6h.13066369.question.10.786f3fc0ejBPJz
 
+
+export work_dir=/mnt/sfs_turbo/
+export container_work_dir=/mnt/sfs_turbo/
+export container_name=botcall_aicall
+export IMAGE=botcall:1.0
+docker run -itd --privileged=true \
+    --device=/dev/davinci0:/dev/davinci0 \
+    --device=/dev/davinci1:/dev/davinci1 \
+    --device=/dev/davinci2:/dev/davinci2 \
+    --device=/dev/davinci3:/dev/davinci3 \
+    --device=/dev/davinci4:/dev/davinci4 \
+    --device=/dev/davinci5:/dev/davinci5 \
+    --device=/dev/davinci6:/dev/davinci6 \
+    --device=/dev/davinci7:/dev/davinci7 \
+    --device=/dev/davinci_manager:/dev/davinci_manager \
+    --device=/dev/devmm_svm:/dev/devmm_svm \
+    --device=/dev/hisi_hdc:/dev/hisi_hdc \
+    -v /usr/local/dcmi:/usr/local/dcmi \
+    -v /usr/local/bin/npu-smi:/usr/local/bin/npu-smi \
+    -v /usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/common \
+    -v /usr/local/Ascend/driver/lib64/driver:/usr/local/Ascend/driver/lib64/driver \
+    -v /etc/ascend_install.info:/etc/ascend_install.info \
+    -v /etc/vnpu.cfg:/etc/vnpu.cfg \
+    -v /usr/local/Ascend/driver/version.info:/usr/local/Ascend/driver/version.info \
+    --net=host \
+    --cpus 192 \
+    --memory 1000g \
+    --shm-size 200g \
+    -v ${work_dir}:${container_work_dir} \
+    --name ${container_name} \
+    $IMAGE \
+    /bin/bash
+
+
 source /usr/local/Ascend/ascend-toolkit/set_env.sh
 
 export LD_LIBRARY_PATH=/usr/local/Ascend/driver/lib64:/usr/local/Ascend/driver/lib64/common:/usr/local/Ascend/driver/lib64/driver:$LD_LIBRARY_PATH
