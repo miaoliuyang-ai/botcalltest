@@ -1,2 +1,2 @@
 
-docker login -u cn-southwest-2@HST3UFTV7ZD3MTJA20P8 -p c12c60b67cac884ba7cb6054baa07560fb4dde7660e7213cad868fc137a1a1a1 swr.cn-southwest-2.myhuaweicloud.com
+docker login -u cn-east-4@HST3UQM9VOD5UY2KFL6O -p 170405a6f43b91d9a88237eab5fc2826100a3b0803cb00af39b21319d3769dfa swr.cn-east-4.myhuaweicloud.com
