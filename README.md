@@ -15,3 +15,5 @@ python -m vllm.entrypoints.openai.api_server
 
 
 mount -t nfs -o vers=3,timeo=600,noresvport,nolock,tcp c47c5c57-54e0-4034-b4c9-dbf0a94f686c.sfsturbo.internal:/ /mnt/sfs_turbo
+
+https://support.huaweicloud.com/usermanual-sfsturbo/sfsturbo_01_0103.html
