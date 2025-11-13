@@ -14,6 +14,4 @@ python -m vllm.entrypoints.openai.api_server
   --api-key xiVrwO39gXC3LRT876A23eLeIRg2bFLHGOtcjghEoPplw3SupsYkg3q9Jm5Fnsd04hGQkeL3XwM6zx-0WX3RsA
 
 
-mount -t nfs -o vers=3,timeo=600,noresvport,nolock,tcp c47c5c57-54e0-4034-b4c9-dbf0a94f686c.sfsturbo.internal:/ /mnt/sfs_turbo
-
-https://support.huaweicloud.com/usermanual-sfsturbo/sfsturbo_01_0103.html
+docker pull swr.cn-southwest-2.myhuaweicloud.com/botcall/hwbotcall:1.1
