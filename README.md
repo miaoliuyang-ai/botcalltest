@@ -17,3 +17,6 @@ python -m vllm.entrypoints.openai.api_server
 
   https://www.hr-soft.cn/info/2025072334785.html
 
+
+  https://www.shangyexinzhi.com/article/29056488.html
+
